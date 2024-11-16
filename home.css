@@ -1,0 +1,442 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    background-color: #050505;
+    color: #333;
+}
+
+/* Navigation Bar */
+/* .box{
+    flex-direction: column;
+    align-items: center;
+} */
+/* @media (min-width:600px) and(max-width:8000px){
+    .box
+    {
+      display:flex;
+      flex-direction: column;  
+      justify-content: center;
+      align-items: center;
+    }
+
+    
+} */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #0a0a0a;
+    color: rgb(244, 244, 244);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-name{
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffae42;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-name:hover {
+    color: #e69530;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links li a:hover {
+    color: #ffae42;
+}
+
+/* Smooth Scroll for Links */
+.nav-links li a {
+    scroll-behavior: smooth;
+}
+
+/* Hamburger Icon */
+/* Navigation Bar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #333;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.nav-name{
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #ffae42;
+    cursor: pointer;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-name:hover {
+    color: #e69530;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-links li a:hover {
+    color: #ffae42;
+}
+
+/* Smooth Scroll for Links */
+.nav-links li a {
+    scroll-behavior: smooth;
+}
+
+/* Hamburger Icon */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 0.3rem;
+    cursor: pointer;
+}
+
+.hamburger div {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Navigation */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        background: #444;
+        padding: 1rem;
+        border-radius: 8px;
+        position: absolute;
+        right: 1rem;
+        top: 4rem;
+        display: none; /* Hidden by default */
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hamburger {
+        display: flex;
+    }
+
+    /* Add transformations for hamburger icon */
+    .hamburger.active div:nth-child(1) {
+        transform: rotate(45deg) translateY(0.8rem);
+    }
+
+    .hamburger.active div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active div:nth-child(3) {
+        transform: rotate(-45deg) translateY(-0.8rem);
+    }
+
+    /* Checkbox hack */
+    .menu-toggle {
+        display: none;
+    }
+
+    .menu-toggle:checked + .nav-links {
+        display: flex;
+    }
+
+    .menu-toggle:checked + .nav-links + .hamburger {
+        transform: rotate(180deg);
+    }
+}
+
+/* Home Section */
+.home {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 4rem 2rem;
+    background: #f9f9f9;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+.image-container {
+    flex: 1;
+    text-align: center;
+}
+
+.image {
+    width: 320px;
+    height: 320px;
+    border-radius: 10%;
+    border: 10px solid white;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.6s ease-in-out;
+}
+
+.image:hover {
+    transform: scale(1.2) rotate(10deg);
+    filter: hue-rotate(120deg);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.text-container {
+    flex: 2;
+    max-width: 600px;
+    padding: 0 2rem;
+    text-align: left;
+    animation: fadeInRight 1.5s ease-in-out;
+}
+
+.text-container h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-align: center; /* Center-align heading */
+}
+
+.text-container p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: #555;
+}
+
+
+/* Contact Section */
+#contact {
+    padding: 2rem 1rem;
+    background: #333;
+    color: rgb(216, 19, 19);
+    text-align: center;
+    border-radius:20px;
+    margin: 2rem auto;
+    max-width:600px;
+}
+
+#contact h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    max-width: 400px;
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    margin: 0 auto;
+}
+
+#contact button {
+    padding: 0.8rem 2rem;
+    background-color: #ffae42;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background-color: #e69530;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #222;
+    color: white;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.social a {
+    text-decoration: none;
+    color: #ffae42;
+    transition: color 0.3s ease-in-out;
+}
+
+.social a:hover {
+    color: #e69530;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Responsive Design */
+
+/* For medium-sized devices like tablets */
+@media (max-width: 560px) {
+    .home {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .text-container {
+        max-width: 80%;
+    }
+
+    .image {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* For small devices like mobile phones */
+@media (max-width: 568px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 1rem;
+        background: #444;
+        padding: 1rem;
+        border-radius: 8px;
+        position: absolute;
+        right: 1rem;
+        top: 4rem;
+        display: none; /* Hidden by default */
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .home {
+        flex-direction: column;
+        padding: 2rem 1rem;
+        text-align: center;
+    }
+
+    .image-container {
+        margin-bottom: 2rem;
+    }
+
+ 
+
+    .text-container h1 {
+        font-size: 2rem;
+    }
+
+    .text-container p {
+        font-size: 1rem;
+    }
+
+    .image {
+        width: 250px;
+        height: 250px;
+    }
+}
+
+/* For very small devices like mobile phones in portrait orientation */
+@media (max-width: 600spx) {
+    .text-container h1 {
+        font-size: 1.8rem;
+    }
+
+    .text-container p {
+        font-size: 1rem;
+    }
+
+
+
+    .image {
+        width: 200px;
+        height: 200px;
+    }
+
+    .navbar {
+        padding: 1rem;
+    }
+
+    .nav-links {
+        gap: 1rem;
+    }
+}
+
